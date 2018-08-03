@@ -1,0 +1,11 @@
+Data Structures of list.
+The list data type has some methods.
+list.append(x)
+list.extend()
+list.insert(i,x)
+list.remove(x)
+list.pop(i)
+list.sort()
+list.copy()
+list.reverse()
+

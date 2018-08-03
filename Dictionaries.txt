@@ -1,0 +1,8 @@
+tuples are immutable
+dict.keys()
+dict.values()
+dict.items()
+dict.get()
+dict.setdefault()
+     
+
