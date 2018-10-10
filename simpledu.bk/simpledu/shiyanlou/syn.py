@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import time
+from multiprocessing import Process,Value 
+def func(val):
+	for i in range(50):
+		time.sleep(0.01)
+		val.value += 1
+
+if __name__ =="__main__":
+	v = Value('i',0)#why
+	procs = [Process(target = func,args =(v,)) for i in range(10)]#target = son process args= ruple
+
+	for p in procs:
+		p.start()
+	for p in procs:
+		p.join()
+	print(v.value)
