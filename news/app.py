@@ -1,7 +1,20 @@
 from flask import Flask,render_template
 import os
 import json
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+db = SQLAlchemy(app)
+class File(db.Model):  
+    id = db.Column(db.Integer,primary_key=True)
+    title = db.Column(db.String(80))
+    created_time = db.Column(db.Date)
+    category_id = db.Column(db.Integer,db.ForeignKey)
+    content = db.Column(db.Text)
+class Category(db.Model):
+    id = db.Column(db.Integer,PrimaryKey=True)
+    name = db.Columb(db.String(80))
+
 class Files(object):
     directory  =os.path.join( os.path.abspath(os.path.dirname(__name__)),'..','files')
     def __init__(self):
