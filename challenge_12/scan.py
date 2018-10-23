@@ -39,7 +39,7 @@ def scan():
         else:
             print(i,"closed")
         s.close()
-    print(f'Complted scan.Opening ports at {open_list}')
+    print(f'Complted scan.Opening ports at {open_list}')#pyhon3.6标准输出
 
 if __name__ == "__main__":
     scan()
